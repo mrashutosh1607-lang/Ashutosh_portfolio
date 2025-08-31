@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Kara - CPC Certified Medical Coder</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+        /* CSS Variables for Easy Color Changes */
+        :root {
+            --primary-color: #2c3e50; /* Midnight Blue */
+            --secondary-color: #34495e; /* Wet Asphalt */
+            --accent-color: #3498db; /* Peter River Blue */
+            --light-color: #ecf0f1; /* Clouds */
+            --dark-text: #34495e;
+            --light-text: #ffffff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover; /* Ensures the image fits well */
+            box-shadow: 0 0 25px rgba(52, 152, 219, 0.5);
+        }
+
+        header h1 {
+            color: var(--light-text);
+            font-weight: 700;
+            margin: 1rem 0 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- Card and Section Styling --- */
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            opacity: 0; /* Hidden for animation */
+            transform: translateY(30px); /* Start slightly lower for animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        /* Animation class to be added by JS */
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title svg {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            fill: var(--primary-color);
+        }
+
+        /* --- Experience Section --- */
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .job-details {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233498db" class="bi bi-check-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/></svg>') no-repeat left center;
+            padding-left: 25px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-link svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- IMPORTANT: Replace 'profile.jpg' with the actual filename of your professional photo -->
+        <img src="profile.jpg" alt="A photo of Ashutosh Kara" class="profile-image">
+        <h1>Ashutosh Kara</h1>
+        <p>CPC Certified Medical Coder | B.Pharma Graduate</p>
+    </header>
+
+    <main class="container">
+
+        <!-- About Me Section -->
+        <section class="card">
+            <h2 class="section-title">
+                <!-- Medical Coding Symbol (Caduceus) - Embedded SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.29 49.33">
+                  <path d="M48,24.63c0-.12.08-.24.08-.37A24.58,24.58,0,0,0,1,16.09a2.53,2.53,0,0,0,.19,5.05c.1,0,.2,0,.3,0a2.4,2.4,0,0,0,2-1.2,19.5,19.5,0,0,1,39,6c0,.13-.08.25-.08.38a24.67,24.67,0,0,0-20,22.3,2.5,2.5,0,0,0,5,.38.1.1,0,0,0,0-.1,19.5,19.5,0,0,1,10.6-38.1,2.54,2.54,0,0,0,2.1-3.79Z" transform="translate(0 0.04)"/><path d="M25.79,49.29a2.5,2.5,0,0,0,2.5-2.5V2.5A2.5,2.5,0,0,0,25.79,0h-2.2A2.5,2.5,0,0,0,21,2.5V46.79a2.5,2.5,0,0,0,2.5,2.5Z" transform="translate(0 0.04)"/>
+                </svg>
+                About Me
+            </h2>
+            <p>
+                A detail-oriented and CPC Certified Medical Coder with a strong foundation in B.Pharma and practical industry experience. I am passionate about ensuring accuracy and efficiency in medical billing and coding to contribute to a seamless healthcare revenue cycle. I am adept at translating complex medical documentation into standardized codes and am committed to continuous learning to keep pace with the evolving healthcare landscape.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="card">
+            <h2 class="section-title">Experience</h2>
+            <h3 class="job-title">Medical Coder</h3>
+            <p class="job-details">
+                <strong>CorroHealth</strong> | Noida, Uttar Pradesh | Oct 2024 - Jan 2025
+            </p>
+            <ul>
+                <li>Accurately assigned ICD-10-CM, CPT, and HCPCS codes based on thorough reviews of medical records.</li>
+                <li>Ensured all coding practices adhered to official guidelines, regulations, and compliance standards.</li>
+                <li>Collaborated effectively with healthcare providers to clarify documentation and resolve coding discrepancies.</li>
+                <li>Maintained a high level of accuracy and productivity in a fast-paced environment.</li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="card">
+            <h2 class="section-title">Education</h2>
+            <h3 class="job-title">Bachelor of Pharmacy (B.Pharma)</h3>
+            <p class="job-details">
+                <strong>Centurion University of Technology and Management</strong> | 2019 - 2023
+            </p>
+            <h3 class="job-title">Higher Secondary School</h3>
+            <p class="job-details">
+                <strong>Aryan Gurukul Higher Secondary School</strong> | 2017 - 2019
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="card">
+            <h2 class="section-title">Connect With Me</h2>
+            <a href="https://www.linkedin.com/in/ashutosh-kara-82622a372/" class="contact-link" target="_blank">
+                <!-- LinkedIn Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn Profile
+            </a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Ashutosh Kara</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript for scroll animations
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Optional: stop observing once it's visible
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the card is visible
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
